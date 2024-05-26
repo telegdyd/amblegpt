@@ -155,13 +155,13 @@ def prompt_gpt4_with_video_frames(prompt, base64_frames, low_detail=True):
         },
     ]
     payload = {
-        "model": "gpt-4o",
+        "model": "google/gemini-flash-1.5",
         "messages": PROMPT_MESSAGES,
         "max_tokens": 200,
     }
 
     return requests.post(
-        "https://api.openai.com/v1/chat/completions", headers=headers, json=payload
+        "https://openrouter.ai/api/v1/chat/completions", headers=headers, json=payload
     )
 
 
